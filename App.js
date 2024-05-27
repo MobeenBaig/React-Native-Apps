@@ -58,6 +58,11 @@ export default function App() {
           options = {{headerShown:false}}
         /> 
 
+<Stack.Screen 
+          name='SignUp'
+          component={SignUp}
+          options = {{headerShown:false}}
+        />
 {/* <Stack.Screen 
           name='B'
           component={B}
@@ -75,12 +80,12 @@ export default function App() {
           component={SignIn}
           options={{ headerShown: false }} 
         />  */}
-{/* 
+
         <Stack.Screen 
           name='SignIn'
           component={SignIn}
           options={{ headerShown: false }} 
-        />  */}
+        /> 
 
 {/* <Stack.Screen 
           name='Home'
@@ -108,11 +113,7 @@ export default function App() {
         /> 
 
 
- <Stack.Screen 
-          name='SignUp'
-          component={SignUp}
-          options = {{headerShown:false}}
-        />
+
 
         
       </Stack.Navigator>
