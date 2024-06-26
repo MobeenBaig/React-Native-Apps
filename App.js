@@ -18,15 +18,20 @@ import Jym from './Jym';
 import B from './B';
 import Gym from './Gym';
 //import Home from './Home';
-//import Home from './Home';
-import Home from './Home11';
+import Home from './Home';
+// import Home from './Home11';
 //import Home from './Home12';
+import { ThemeProvider } from './Theme';
+import Cooking from './Cooking';
+import Education from './Education';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
 
   return (
+   
     <NavigationContainer>
+      <ThemeProvider>
       <Stack.Navigator>
 
       
@@ -41,9 +46,23 @@ export default function App() {
           component={Gym}
           options={{ headerShown: false }} 
         />   */}
-        
+        <Stack.Screen 
+          name='Home'
+          component={Home}
+          options = {{headerShown:false}}
+        /> 
 
-       
+       <Stack.Screen 
+          name='Cooking'
+          component={Cooking}
+          options={{ headerShown: false }} 
+        />  
+
+<Stack.Screen 
+          name='Education'
+          component={Education}
+          options={{ headerShown: false }} 
+        />  
 
 {/* <Stack.Screen 
           name='AdFree'
@@ -52,11 +71,7 @@ export default function App() {
         />  */}
 
 
-<Stack.Screen 
-          name='Home'
-          component={Home}
-          options = {{headerShown:false}}
-        /> 
+
 
 <Stack.Screen 
           name='SignUp'
@@ -117,9 +132,10 @@ export default function App() {
 
         
       </Stack.Navigator>
-
       
+      </ThemeProvider>
     </NavigationContainer>
+ 
   );
 }
 
@@ -137,3 +153,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
