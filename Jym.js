@@ -170,8 +170,8 @@ export default function Jym() {
 
   return (
     <View style={styles.container}>
-      <View style={{ flex: 0.16 }}>
-        <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#00FFFF', marginLeft: 10 }}>Exercise List For Muscles</Text>
+      <View style={{ flex: 0.17 , backgroundColor:'black',paddingTop:10 , }}>
+        <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#00FFFF', marginLeft: 10 ,  }}>Exercise List For Muscles</Text>
         <FlatList
           style={{ backgroundColor: 'black', paddingTop: 15 }}
           horizontal
@@ -181,19 +181,20 @@ export default function Jym() {
           contentContainerStyle={styles.optionsContainer}
         />
       </View>
-      <View style={{ flex: 0.8 }}>
+      <View style={{ flex: 0.83}}>
         <FlatList
           data={data}
           renderItem={({ item }) => (
             <View style={{ flex: 1 }}>
               <View style={{ flex: 0.3, marginVertical: 2, marginBottom: 2, borderRadius: 10 }}>
                 <Text style={{ fontSize: 22, color: '#00FFFF', fontWeight: 'bold', marginBottom: 15, marginLeft: 10 }}>{item.name}</Text>
-                <Text style={{ fontSize: 16, color: 'white', fontWeight: 'bold', marginLeft: 10 }}>Muscle: {item.muscle}</Text>
-                <Text style={{ fontSize: 16, color: 'white', fontWeight: 'bold', paddingTop: 4, marginLeft: 10 }}>Equipment: {item.equipment}</Text>
+                <Text style={{ fontSize: 18, color: 'orange', fontWeight: 'bold', marginLeft: 10,marginBottom:10 }}>Muscle: {item.muscle}</Text>
+                <Text style={{ fontSize: 18, color: 'orange', fontWeight: 'bold', paddingTop: 4, marginLeft: 10 }}>Equipment: {item.equipment}</Text>
                 {selectedMuscle in images && (
                   <ImageBackground style={styles.image} source={images[selectedMuscle][currentImageIndex]} />
                 )}
-                <Text style={{ fontSize: 16, color: 'white', paddingTop: 4, marginLeft: 10, textAlign: 'justify' }}>Instructions: {item.instructions}</Text>
+                <Text style = {{fontSize: 18, color: 'orange', fontWeight: 'bold', paddingTop: 4, marginLeft: 10, textAlign: 'justify'}}>Instructions:</Text>
+                <Text style={{ fontSize: 16, color: 'white', paddingTop: 4, marginLeft: 5, textAlign: 'justify' , fontWeight:'bold' , marginRight:5 }}> {item.instructions}</Text>
               </View>
             </View>
           )}
@@ -210,10 +211,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#333',
+    
   },
   optionsContainer: {
-    marginBottom: 10,
+    marginBottom: 20,
+    paddingTop:1,
     paddingHorizontal: 10,
+    
+   
   },
   optionButton: {
     paddingVertical: 10,
@@ -226,15 +232,15 @@ const styles = StyleSheet.create({
     width: 140,
   },
   selectedOptionButton: {
-    backgroundColor: 'purple',
+    backgroundColor: 'orange',
   },
   optionButtonText: {
     fontSize: 17,
-    color: 'white',
+    color: '#B3B6B7',
     fontWeight: 'bold',
   },
   selectedOptionButtonText: {
-    color: '#fff',
+    color: 'white',
   },
   image: {
     height: 160,
