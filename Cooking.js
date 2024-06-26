@@ -96,13 +96,14 @@ export default function Cooking() {
   const renderRecipeItem = ({ item }) => (
     <View style={styles.recipeContainer}>
       <Text style={styles.recipeTitle}>{item.title}</Text>
-      <Text style={styles.recipeText}>Ingredients: {item.ingredients}</Text>
+      <Text style = {{color:'orange' , fontSize:18 , fontWeight:'bold'}}>Ingredients:</Text>
+      <Text style={styles.recipeText}> {item.ingredients}</Text>
       {selectedRecipe in images && (
         <ImageBackground style={styles.image} source={images[selectedRecipe][currentImageIndex]}>
           <Text style={styles.imageText}></Text>
         </ImageBackground>
       )}
-      <Text style={styles.recipeText}>Servings: {item.servings}</Text>
+      <Text style={{color:'orange' , fontSize:18, fontWeight:'bold'}}>Servings: {item.servings}</Text>
       <Text style={styles.recipeText}>Instructions: {item.instructions}</Text>
     </View>
   );
@@ -163,11 +164,11 @@ const styles = StyleSheet.create({
     width: 180,
   },
   selectedOptionButton: {
-    backgroundColor: 'purple',
+    backgroundColor: 'orange',
   },
   optionButtonText: {
     fontSize: 20,
-    color: 'white',
+    color: '#B3B6B7',
     fontWeight: 'bold',
   },
   selectedOptionButtonText: {
