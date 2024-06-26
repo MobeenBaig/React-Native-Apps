@@ -4,16 +4,20 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons, SimpleLineIcons } from '@expo/vector-icons';
 import Profile from './Profile';
 import Settings from './Settings';
+import Cooking from './Cooking';
 import { ImageBackground } from 'react-native';
+
 
 const Tab = createBottomTabNavigator();
 
 const images = [
     { key: '1', image: require('./assets/education.jpg'), name: 'Education' },
-    { key: '2', image: require('./assets/sport4.jpg'), name: 'Sports' },
-    { key: '3', image: require('./assets/health1.jpg'), name: 'Health' },
     { key: '4', image: require('./assets/asd.jpg'), name: 'Muscles' },
     { key: '5', image: require('./assets/cooking3.jpg'), name: 'Cooking' },
+    { key: '2', image: require('./assets/sport4.jpg'), name: 'Sports' },
+    { key: '3', image: require('./assets/health1.jpg'), name: 'Health' },
+  
+ 
     { key: '6', image: require('./assets/tech.jpg'), name: 'Technology' },
     { key: '7', image: require('./assets/math.webp'), name: 'Artificial Intelligence' }
 ];
@@ -46,11 +50,21 @@ export default function Home({navigation}) {
 
     const handleImagePress = (item) => {
         console.log('Image pressed:', item.key);
+        
         if (item.key == 4){
             navigation.navigate('Jym')
         }
-        else
-        console.log('empty')
+       
+        else if (item.key == 5){
+            navigation.navigate('Cooking')
+        }
+        else if (item.key == 1){
+            navigation.navigate('Education')
+        }
+        else {
+        console.log('item not available');
+        }
+       
     };
 
     const clearSearchQuery = () => {
